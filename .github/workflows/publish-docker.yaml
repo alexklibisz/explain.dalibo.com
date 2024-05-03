@@ -10,13 +10,12 @@ concurrency:
   cancel-in-progress: true
 jobs:
   publish:
-    needs: check
     if: ${{ needs.check.outputs.exists == 'false' }}
     runs-on: ubuntu-22.04
     permissions:
       packages: write
     steps:
-      - name: Clone
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-tags: true
