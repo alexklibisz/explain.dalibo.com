@@ -19,8 +19,7 @@ jobs:
       - name: Clone
         uses: actions/checkout@v3
         with:
-          repository: 'dalibo/explain.dalibo.com'
-          ref: ${{ needs.check.outputs.tag }}
+          fetch-tags: true
       - name: Get latest tag
         run: |
           TAG=$(git tag -l --sort=v:refname | tail -1)
