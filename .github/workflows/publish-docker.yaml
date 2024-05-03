@@ -12,6 +12,7 @@ jobs:
   publish:
     runs-on: ubuntu-22.04
     permissions:
+      # Needed to publish to GHCR.
       packages: write
     steps:
       - name: Checkout
